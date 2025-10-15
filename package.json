@@ -1,0 +1,14 @@
+{
+  "name": "saas-starter",
+  "description": "Replyke starter",
+  "private": true,
+  "packageManager": "pnpm@10.8.0",
+  "scripts": {
+    "dev:blog": "pnpm -F replyke-blog dev",
+    "dev:roadmap": "pnpm -F replyke-roadmap dev",
+    "build:blog": "pnpm -F replyke-blog build",
+    "build:roadmap": "pnpm -F replyke-roadmap build",
+    "start:blog": "pnpm -F replyke-blog start",
+    "start:roadmap": "pnpm -F replyke-roadmap start"
+  }
+}
