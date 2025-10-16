@@ -11,9 +11,13 @@ import StageBadge from "../shared/StageBadge";
 function SingleColumn({
   column,
   setSelectedTicket,
+  isMobile = false,
+  isTablet = false,
 }: {
   column: Column;
   setSelectedTicket: (ticket: Entity) => void;
+  isMobile?: boolean;
+  isTablet?: boolean;
 }) {
   const { entities, fetchEntities, loading } = useEntityList({
     listId: column.id,
@@ -21,6 +25,7 @@ function SingleColumn({
   const [showInput, setShowInput] = useState(false);
 
   useEffect(() => {
+    if (entities.length > 0) return;
     fetchEntities(
       {
         metadataFilters: {
@@ -33,10 +38,17 @@ function SingleColumn({
         sourceId: "roadmap",
       }
     );
-  }, []);
+  }, [entities]);
+
+  // Determine column width based on screen size
+  const columnWidthClass = isMobile
+    ? "w-full"
+    : isTablet
+    ? "min-w-[280px] w-[280px] snap-center"
+    : "flex-1";
 
   return (
-    <div className="flex-1">
+    <div className={columnWidthClass}>
       <div className="bg-gray-50 rounded-lg p-3 h-full flex flex-col w-full">
         <div className="flex justify-between items-center mb-3">
           <StageBadge columnId={column.id} />
