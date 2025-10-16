@@ -13,8 +13,8 @@ function ColumnSelector({
   columnCounts = {},
 }: ColumnSelectorProps) {
   return (
-    <div className="w-full mb-4 overflow-x-auto">
-      <div className="flex gap-2 min-w-max px-1">
+    <div className="w-full mb-3 overflow-x-auto">
+      <div className="flex gap-1.5 min-w-max px-1">
         {columns.map((column) => {
           const Icon = column.icon;
           const isActive = activeColumnId === column.id;
@@ -25,22 +25,21 @@ function ColumnSelector({
               key={column.id}
               onClick={() => onColumnChange(column.id)}
               className={cn(
-                "flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium whitespace-nowrap",
-                "border-2",
+                "flex items-center gap-1.5 px-2.5 py-1.5 rounded-md transition-all duration-200 text-xs font-semibold whitespace-nowrap border",
                 isActive
                   ? column.styles
-                  : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
+                  : "bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-gray-600 dark:text-zinc-400 hover:bg-gray-50 dark:hover:bg-zinc-800"
               )}
             >
-              <Icon className="size-4" />
+              <Icon className="size-3.5" />
               <span>{column.title}</span>
               {count > 0 && (
                 <span
                   className={cn(
-                    "ml-1 px-2 py-0.5 rounded-full text-xs font-semibold",
+                    "ml-0.5 px-1.5 py-0.5 rounded-full text-[11px] font-bold",
                     isActive
-                      ? "bg-white/80"
-                      : "bg-gray-100 text-gray-600"
+                      ? "bg-white/80 dark:bg-black/20"
+                      : "bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400"
                   )}
                 >
                   {count}

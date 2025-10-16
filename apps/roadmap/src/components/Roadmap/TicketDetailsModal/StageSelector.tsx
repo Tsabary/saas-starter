@@ -22,8 +22,8 @@ function StageSelector({ columnId }: { columnId: string }) {
           }
         />
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
+      <PopoverContent className="w-[200px] p-0 bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700">
+        <Command className="bg-white dark:bg-zinc-900">
           <CommandList>
             <CommandGroup>
               {columns.map((column) => (
@@ -38,11 +38,12 @@ function StageSelector({ columnId }: { columnId: string }) {
                     });
                     location.reload();
                   }}
+                  className="text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-zinc-800"
                 >
                   {column.title}
                   <Check
                     className={cn(
-                      "ml-auto",
+                      "ml-auto text-gray-900 dark:text-gray-100",
                       value === column.id ? "opacity-100" : "opacity-0"
                     )}
                   />

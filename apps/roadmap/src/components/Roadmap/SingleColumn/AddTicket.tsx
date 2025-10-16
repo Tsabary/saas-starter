@@ -53,7 +53,7 @@ export default function AddTicket({ columnId }: { columnId: string }) {
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-1.5">
       <Input
         placeholder="Add a request.."
         value={title}
@@ -62,7 +62,7 @@ export default function AddTicket({ columnId }: { columnId: string }) {
             setTitle(e.target.value);
           }
         }}
-        className="shadow-none h-7 bg-white text-xs placeholder:text-xs"
+        className="shadow-none h-8 bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-xs placeholder:text-xs focus:border-blue-400 dark:focus:border-blue-500"
       />
 
       <AnimatePresence>
@@ -74,7 +74,7 @@ export default function AddTicket({ columnId }: { columnId: string }) {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="text-[10px] text-right text-muted-foreground">
+              <div className="text-[10px] text-right text-gray-500 dark:text-zinc-400">
                 {TITLE_MAX - title.length} characters left
               </div>
             </motion.div>
@@ -93,9 +93,9 @@ export default function AddTicket({ columnId }: { columnId: string }) {
                     setDescription(e.target.value);
                   }
                 }}
-                className="bg-white text-xs placeholder:text-xs"
+                className="bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-700 text-xs placeholder:text-xs min-h-[60px] focus:border-blue-400 dark:focus:border-blue-500"
               />
-              <div className="text-[10px] text-right text-muted-foreground mt-1">
+              <div className="text-[10px] text-right text-gray-500 dark:text-zinc-400 mt-1">
                 {DESCRIPTION_MAX - description.length} characters left
               </div>
             </motion.div>
@@ -105,16 +105,16 @@ export default function AddTicket({ columnId }: { columnId: string }) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="mt-1 self-end"
+              className="mt-0.5 self-end"
             >
               <Button
                 onClick={handleAddPost}
                 disabled={submitting}
                 size="sm"
-                className="text-xs h-7"
+                className="text-xs h-7 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
               >
                 {submitting && (
-                  <LoaderCircle className="size-4 mr-2 animate-spin" />
+                  <LoaderCircle className="size-3.5 mr-1.5 animate-spin" />
                 )}
                 {submitting ? "Submitting.." : "Submit"}
               </Button>

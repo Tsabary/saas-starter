@@ -15,14 +15,14 @@ function UpvoteButton() {
     <button
       onClick={userUpvotedEntity ? removeEntityUpvote : upvoteEntity}
       className={cn(
-        "flex items-center gap-1 text-primary rounded-md px-1.5 py-0.5 transition-colors cursor-pointer",
+        "flex items-center gap-0.5 rounded-md px-1 py-0.5 transition-all cursor-pointer text-xs font-semibold",
         userUpvotedEntity
-          ? "bg-green-100 hover:bg-green-200 border border-green-400 text-green-500"
-          : "bg-gray-100 hover:bg-gray-200 border border-gray-400 text-gray-500"
+          ? "bg-emerald-500 dark:bg-emerald-600 text-white hover:bg-emerald-600 dark:hover:bg-emerald-700"
+          : "bg-transparent border border-gray-300 dark:border-zinc-600 text-gray-600 dark:text-zinc-400 hover:bg-gray-100 dark:hover:bg-zinc-800 hover:border-gray-400 dark:hover:border-zinc-500"
       )}
     >
-      <ChevronUp className="h-4 w-4" />
-      <span className="text-xs font-medium">{ticket.upvotes.length}</span>
+      <ChevronUp className="h-3.5 w-3.5" />
+      <span>{ticket.upvotes.length}</span>
     </button>
   );
 }

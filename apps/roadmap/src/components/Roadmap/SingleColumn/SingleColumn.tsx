@@ -49,18 +49,18 @@ function SingleColumn({
 
   return (
     <div className={columnWidthClass}>
-      <div className="bg-gray-50 rounded-lg p-3 h-full flex flex-col w-full">
-        <div className="flex justify-between items-center mb-3">
+      <div className="bg-gray-100/50 dark:bg-zinc-900/50 rounded-lg p-2 h-full flex flex-col w-full border border-gray-200/50 dark:border-zinc-800">
+        <div className="flex justify-between items-center mb-2">
           <StageBadge columnId={column.id} />
 
           {column.withInput && (
             <Button
               variant="ghost"
               size="sm"
-              className="text-xs h-6 px-2"
+              className="text-xs h-7 px-2 hover:bg-gray-200 dark:hover:bg-zinc-800"
               onClick={() => setShowInput((prev) => !prev)}
             >
-              {showInput ? "↑ Cancel" : "+ Add"}
+              {showInput ? "Cancel" : "+ Add"}
             </Button>
           )}
         </div>
@@ -79,11 +79,11 @@ function SingleColumn({
           )}
         </AnimatePresence>
 
-        <div className="space-y-2 flex-grow mt-2 w-full">
+        <div className="space-y-1.5 flex-grow mt-1.5 w-full">
           {loading ? (
-            <LoaderCircleIcon className="size-4 text-gray-400 animate-spin mx-auto my-4" />
+            <LoaderCircleIcon className="size-4 text-gray-400 dark:text-zinc-500 animate-spin mx-auto my-4" />
           ) : (entities || []).length === 0 ? (
-            <p className="text-center text-gray-400 text-sm p-4">
+            <p className="text-center text-gray-400 dark:text-zinc-500 text-xs p-4">
               Nothing here yet
             </p>
           ) : (

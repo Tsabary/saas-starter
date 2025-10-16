@@ -4,6 +4,7 @@ import SingleColumn from "./SingleColumn";
 import TicketDetailsModal from "./TicketDetailsModal";
 import ColumnSelector from "./ColumnSelector";
 import { Dialog } from "@/components/ui/dialog";
+import { Drawer } from "@/components/ui/drawer";
 import { columns } from "../../constants/columns-data";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
@@ -24,19 +25,11 @@ function Roadmap() {
     ? columns.filter((col) => col.id === activeColumnId)
     : columns;
 
-  return (
-    <Dialog
-      onOpenChange={(open) => {
-        if (!open) setSelectedTicket(null);
-      }}
-    >
-      <EntityProvider entity={selectedTicket ?? undefined}>
-        <TicketDetailsModal
-          selectedTicket={selectedTicket}
-          columnId={selectedTicketStage}
-        />
-      </EntityProvider>
+  // Use Drawer for mobile, Dialog for desktop
+  const ResponsiveWrapper = isMobile ? Drawer : Dialog;
 
+  return (
+    <>
       {/* Mobile: Column selector tabs */}
       {isMobile && (
         <ColumnSelector
@@ -68,7 +61,23 @@ function Roadmap() {
           />
         ))}
       </div>
-    </Dialog>
+
+      {/* Modal/Drawer for ticket details */}
+      <ResponsiveWrapper
+        open={!!selectedTicket}
+        onOpenChange={(open) => {
+          if (!open) setSelectedTicket(null);
+        }}
+      >
+        <EntityProvider entity={selectedTicket ?? undefined}>
+          <TicketDetailsModal
+            selectedTicket={selectedTicket}
+            columnId={selectedTicketStage}
+            isMobile={isMobile}
+          />
+        </EntityProvider>
+      </ResponsiveWrapper>
+    </>
   );
 }
 

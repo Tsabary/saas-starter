@@ -8,11 +8,11 @@ function StageBadge({ columnId }: { columnId: string }) {
   return (
     <h2
       className={cn(
-        "flex items-center text-xs px-2.5 py-0.5 font-medium rounded-md w-max",
+        "flex items-center text-xs px-2.5 py-1 font-semibold rounded-md w-max border",
         column.styles
       )}
     >
-      {<column.icon className="size-3 mr-2" />}
+      {<column.icon className="size-3.5 mr-1.5" />}
       {column.title}
     </h2>
   );

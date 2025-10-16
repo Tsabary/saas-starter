@@ -1,7 +1,5 @@
 import { Entity, useEntity } from "@replyke/react-js";
 import { MessageSquare } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { DialogTrigger } from "@/components/ui/dialog";
 import UpvoteButton from "../shared/UpvoteButton";
 
 function SingleTicket({
@@ -14,29 +12,24 @@ function SingleTicket({
   if (!ticket) return null;
 
   return (
-    <Card className="shadow-none hover:shadow-md transition-shadow p-0 max-w-full flex flex-col items-stretch border-gray-300 rounded-md gap-3">
-      <CardHeader className="p-2 pb-0 max-w-full">
-        <DialogTrigger
-          onClick={() => setSelectedTicket(ticket)}
-          className="cursor-pointer block max-w-full"
-        >
-          <CardTitle className="text-left text-xs font-medium text-sky-950 hover:underline">
-            {ticket.title}
-          </CardTitle>
-          {/* <CardDescription className="block text-left text-sky-950 text-sm whitespace-normal">
-            {ticket.content}
-          </CardDescription> */}
-        </DialogTrigger>
-      </CardHeader>
+    <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-md p-2.5 hover:border-gray-300 dark:hover:border-zinc-600 transition-colors group">
+      <button
+        onClick={() => setSelectedTicket(ticket)}
+        className="cursor-pointer block w-full text-left mb-2"
+      >
+        <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 leading-snug">
+          {ticket.title}
+        </h3>
+      </button>
 
-      <CardContent className="p-2 pt-0 flex justify-between items-center">
-        <div className="flex items-center gap-1 text-muted-foreground">
-          <MessageSquare className="h-4 w-4" />
+      <div className="flex justify-between items-center gap-2">
+        <div className="flex items-center gap-1 text-gray-500 dark:text-zinc-400">
+          <MessageSquare className="h-3.5 w-3.5" />
           <span className="text-xs">{ticket.repliesCount}</span>
         </div>
         <UpvoteButton />
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
 

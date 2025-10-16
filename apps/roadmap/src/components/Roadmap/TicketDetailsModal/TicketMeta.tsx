@@ -16,21 +16,21 @@ function TicketMeta({
 }) {
   const { user } = useUser();
   return (
-    <div className="flex flex-col divide-y divide-gray-200 p-0">
-      <div className="px-4 py-5 flex flex-col gap-4">
-        <div className="grid grid-cols-5 items-center">
-          <div className="col-span-2 text-sm font-medium text-gray-500">
-            Upvoters
+    <div className="flex flex-col divide-y divide-gray-200 dark:divide-zinc-700 p-0">
+      <div className="px-3 py-3 flex flex-col gap-3">
+        <div className="flex justify-between items-center gap-2">
+          <div className="text-xs font-semibold text-gray-600 dark:text-zinc-400">
+            Upvotes
           </div>
-          <div className="col-span-3">
+          <div>
             <UpvoteButton />
           </div>
         </div>
-        <div className="grid grid-cols-5">
-          <div className="col-span-2 text-sm font-medium text-gray-500">
+        <div className="flex justify-between items-start gap-2">
+          <div className="text-xs font-semibold text-gray-600 dark:text-zinc-400">
             Stage
           </div>
-          <div className="col-span-3">
+          <div>
             {columnId &&
               (user?.role === "admin" ? (
                 <StageSelector columnId={columnId} />
@@ -41,31 +41,31 @@ function TicketMeta({
         </div>
       </div>
 
-      <div className="px-4 py-5 flex flex-col gap-4">
-        <div className="grid grid-cols-5 items-center">
-          <div className="col-span-2 text-sm font-medium text-gray-500">
+      <div className="px-3 py-3 flex flex-col gap-3">
+        <div className="flex justify-between items-center gap-2">
+          <div className="text-xs font-semibold text-gray-600 dark:text-zinc-400">
             Date
           </div>
-          <div className="col-span-3 text-xs">
+          <div className="text-xs text-gray-900 dark:text-gray-100">
             {getTimeAgo(new Date(selectedTicket.createdAt))}
           </div>
         </div>
-        <div className="grid grid-cols-5">
-          <div className="col-span-2 text-sm font-medium text-gray-500">
+        <div className="flex justify-between items-center gap-2">
+          <div className="text-xs font-semibold text-gray-600 dark:text-zinc-400">
             Author
           </div>
-          <div className="col-span-3 flex gap-3 text-xs">
+          <div className="text-xs text-gray-900 dark:text-gray-100">
             {getUserName(selectedTicket.user!)}
           </div>
         </div>
       </div>
 
-      <div className="px-4 py-5">
+      <div className="px-3 py-3">
         <button
           onClick={showReportOverlay}
-          className="flex items-center text-xs text-gray-400 hover:underline"
+          className="flex items-center text-xs text-gray-600 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-zinc-200 transition-colors"
         >
-          <Flag className="size-3 mr-2" /> Report this ticket
+          <Flag className="size-3 mr-1.5" /> Report this ticket
         </button>
       </div>
     </div>
