@@ -35,7 +35,7 @@ export function HeaderMenu() {
               " bg-transparent px-2 py-1 lg:px-4 lg:py-2"
             }
           >
-            <a href="https://roadmap.replyke.com">Roadmap</a>
+            <a href="https://docs.replyke.com">Documentation</a>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -46,7 +46,7 @@ export function HeaderMenu() {
               " bg-transparent px-2 py-1 lg:px-4 lg:py-2"
             }
           >
-            <a href="https://docs.replyke.com">Documentation</a>
+            <a href="https://roadmap.replyke.com">Roadmap</a>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>

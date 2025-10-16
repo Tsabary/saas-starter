@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
 import { HeaderMenu } from "./HeaderMenu";
-import AvatarDropdown from "../shared/AvatarDropdown";
+import AvatarDropdown from "./AvatarDropdown";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@/assets/logo.webp";
 import logoR from "@/assets/logo-r.webp";

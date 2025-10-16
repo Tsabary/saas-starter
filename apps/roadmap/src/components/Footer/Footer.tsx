@@ -21,17 +21,18 @@ function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
               <a
-                href="https://docs.replyke.com"
-                className="block transition-colors hover:text-primary"
-              >
-                Documentation
-              </a>
-              <a
                 href="https://discord.com/invite/REKxnCJzPz"
                 className="block transition-colors hover:text-primary"
               >
                 Community
               </a>
+              <a
+                href="https://docs.replyke.com"
+                className="block transition-colors hover:text-primary"
+              >
+                Documentation
+              </a>
+
               <a
                 href="https://roadmap.replyke.com"
                 className="block transition-colors hover:text-primary"

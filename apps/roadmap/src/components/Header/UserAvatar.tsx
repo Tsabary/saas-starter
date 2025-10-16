@@ -22,6 +22,7 @@ function UserAvatar({
         borderColor: "#E6E6E6",
         display: "inline-block",
         flexShrink: 0,
+        backgroundColor: "white",
       }}
     >
       <img
