@@ -5,10 +5,13 @@
   "packageManager": "pnpm@10.8.0",
   "scripts": {
     "dev:blog": "pnpm -F replyke-blog dev",
-    "dev:roadmap": "pnpm -F replyke-roadmap dev",
+    "dev:roadmap": "pnpm -F replyke-product-roadmap dev",
+    "dev:support": "pnpm -F replyke-support-tickets dev",
     "build:blog": "pnpm -F replyke-blog build",
-    "build:roadmap": "pnpm -F replyke-roadmap build",
+    "build:roadmap": "pnpm -F replyke-product-roadmap build",
+    "build:support": "pnpm -F replyke-support-tickets build",
     "start:blog": "pnpm -F replyke-blog start",
-    "start:roadmap": "pnpm -F replyke-roadmap start"
+    "start:roadmap": "pnpm -F replyke-product-roadmap start",
+    "start:support": "pnpm -F replyke-support-tickets start"
   }
 }

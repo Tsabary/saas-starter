@@ -1,5 +1,5 @@
 {
-  "name": "replyke-blog",
+  "name": "replyke-support-tickets",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,11 +18,13 @@
     "@radix-ui/react-separator": "1.1.1",
     "@radix-ui/react-slot": "1.1.1",
     "@radix-ui/react-tabs": "1.1.2",
+    "@radix-ui/react-toast": "^1.2.15",
     "@radix-ui/react-tooltip": "1.1.6",
     "@radix-ui/react-visually-hidden": "^1.2.2",
     "@replyke/comments-threaded-react-js": "6.0.2",
     "@replyke/js": "5.0.0",
     "@replyke/react-js": "6.0.2",
+    "@replyke/ui-core-react-js": "6.0.0",
     "@tailwindcss/typography": "latest",
     "@uiw/react-md-editor": "^4.0.5",
     "autoprefixer": "^10.4.20",
@@ -30,6 +32,7 @@
     "browser-image-compression": "^2.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.7.4",
     "lucide-react": "^0.454.0",
     "next": "15.2.4",

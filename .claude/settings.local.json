@@ -3,7 +3,11 @@
     "allow": [
       "Bash(pnpm add:*)",
       "Bash(pnpm build)",
-      "WebSearch"
+      "WebSearch",
+      "mcp__replyke-docs__SearchReplykeDocumentation",
+      "Bash(pnpm tsc:*)",
+      "Bash(tree:*)",
+      "Bash(pnpm list:*)"
     ],
     "deny": [],
     "ask": []

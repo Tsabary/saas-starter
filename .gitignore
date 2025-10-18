@@ -3,3 +3,4 @@ node_modules
 apps/*/.next
 apps/*/node_modules
 apps/*/.env*
+recycle_bin

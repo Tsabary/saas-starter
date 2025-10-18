@@ -1,5 +1,5 @@
 {
-  "name": "comments-vite",
+  "name": "replyke-product-roadmap",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -20,8 +20,8 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "1.1.2",
     "@radix-ui/react-tooltip": "1.1.6",
-    "@replyke/comments-threaded-react-js": "6.0.0",
-    "@replyke/react-js": "6.0.0",
+    "@replyke/comments-threaded-react-js": "6.0.2",
+    "@replyke/react-js": "6.0.2",
     "@replyke/ui-core-react-js": "6.0.0",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react-router-dom": "^5.3.3",
