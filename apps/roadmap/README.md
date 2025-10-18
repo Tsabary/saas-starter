@@ -1,39 +1,170 @@
-# Replyke Forum Starter
+# 🗺️ Roadmap Starter
 
-## Overview
-This is a basic starter project for a multi-topic board/forum where users can post, vote, and comment on posts. It is built using [Replyke](https://replyke.com), allowing developers to quickly set up and customize a discussion platform for their needs.
+**A community-driven roadmap and forum—ship your feedback portal in 5 minutes**
 
-## Getting Started
-To get this project running, follow the steps below:
+Built with Vite + React 19 and powered by [Replyke](https://replyke.com).
 
-### 1. Create a Replyke Project
-1. Head over to [Replyke's Dashboard](https://dashboard.replyke.com).
-2. Create a new project.
-3. Copy the project ID and add it to your `.env` file:
-   ```sh
-   VITE_PUBLIC_REPLYKE_PROJECT_ID=your_project_id_here
-   ```
+---
 
-### 2. Configure Authentication
-Replyke supports both built-in authentication and external user systems. This project relies on an external user system and, for simplicity, uses a mock array of users.
+## 🌐 Live Demo
 
-To make authentication work:
-1. Generate a **secret key** in the [Replyke Dashboard](https://dashboard.replyke.com).
-2. Add the key to your `.env` file:
-   ```sh
-   VITE_PUBLIC_REPLYKE_SECRET_KEY=your_secret_key_here
-   ```
-3. This project uses `useSignTestingJwt` to sign JWTs directly in the client. **This approach is for testing and development only.**
+See it in action: **[roadmap.replyke.com](https://roadmap.replyke.com)**
 
-### 3. Important Security Note
-For production, **never sign JWTs in the client.**
-- Move the signing process to your server.
-- Rotate the secret key before moving to production, as any key used on the client is no longer secure.
+---
 
-## Customization
-Replyke offers extensive customization. Developers can modify styles, integrate their own authentication system, or extend functionality to suit their brand and requirements.
+![Roadmap Board](./screenshots/homepage.png)
 
-Explore [Replyke's Documentation](https://docs.replyke.com) to learn more about customization options.
+## What You Get
 
-## License
-This project is open for modification and customization. Ensure compliance with Replyke's terms of service when deploying.
+This is a complete, production-ready roadmap and discussion platform with:
+
+✅ **Multi-Topic Boards**
+- Create and organize topics/feature requests
+- Rich text posts with markdown support
+- Topic categorization and filtering
+
+✅ **Community Engagement**
+- Upvote/downvote on posts
+- Threaded discussions and replies
+- Real-time vote counts
+- User authentication via Replyke
+
+✅ **Modern UX**
+- Fast Vite development with HMR
+- Responsive design (mobile, tablet, desktop)
+- Dark mode support
+- Smooth animations and transitions
+- Toast notifications
+
+✅ **Production Ready**
+- TypeScript for type safety
+- React Router for navigation
+- Optimized build output
+
+---
+
+## 🚀 Quick Start (5 Minutes)
+
+### 1. Get Your Replyke Project ID
+
+1. Go to [dashboard.replyke.com](https://dashboard.replyke.com)
+2. Create a new project
+3. Copy your Project ID
+
+### 2. Set Up Environment Variables
+
+Create a `.env` file in the `apps/roadmap` directory:
+
+```bash
+VITE_PUBLIC_REPLYKE_PROJECT_ID=your_project_id_here
+```
+
+### 3. Install and Run
+
+```bash
+# From the roadmap directory
+pnpm install
+pnpm dev
+```
+
+Your roadmap will be running at `http://localhost:5173` 🎉
+
+---
+
+![Discussion View](./screenshots/discussion.png)
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Vite** | Build tool with fast HMR |
+| **React 19** | UI library |
+| **React Router** | Client-side routing |
+| **TypeScript** | Type safety |
+| **Tailwind CSS** | Styling and responsive design |
+| **Replyke** | Authentication, posts, voting, comments |
+| **Radix UI + shadcn/ui** | Accessible component primitives |
+| **Framer Motion** | Animations |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── pages/                 # Page components
+│   └── HomePage.tsx       # Main roadmap view
+├── components/
+│   ├── Roadmap/           # Roadmap-specific components
+│   ├── Layout.tsx         # Main layout wrapper
+│   ├── shared/            # Shared components
+│   └── ui/                # shadcn/ui components
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utilities and helpers
+├── types/                 # TypeScript type definitions
+└── AppRoutes.tsx          # Route configuration
+```
+
+---
+
+## 🔐 Authentication
+
+This starter uses **Replyke's built-in authentication**—users can sign up and log in without any additional setup.
+
+### Want to Use Your Own Auth System?
+
+You can easily integrate this roadmap with your existing authentication:
+- Connect to your user database
+- Use third-party providers (Auth0, Clerk, Firebase, etc.)
+- Implement custom authentication logic
+
+**Learn how**: [Replyke External Authentication Guide](https://docs.replyke.com/authentication/external-users)
+
+---
+
+## 🎨 Customization
+
+This is **your code**—customize it however you want:
+
+- **Branding**: Update colors in `tailwind.config.ts` and assets
+- **Layout**: Modify components in `src/components/`
+- **Features**: Add new views, filters, or functionality
+- **Styling**: All styles use Tailwind CSS classes
+- **Routing**: Add new routes in `AppRoutes.tsx`
+
+---
+
+## 📦 Build for Production
+
+```bash
+pnpm build     # Build optimized production bundle
+pnpm preview   # Preview production build locally
+```
+
+Deploy to:
+- Vercel
+- Netlify
+- Cloudflare Pages
+- Any static hosting platform
+
+---
+
+## 🤝 Need Help?
+
+- **Documentation**: [docs.replyke.com](https://docs.replyke.com)
+- **Support**: [support.replyke.com](https://support.replyke.com)
+- **Dashboard**: [dashboard.replyke.com](https://dashboard.replyke.com)
+
+---
+
+## 📄 License
+
+MIT License - Free to use, modify, and deploy however you want.
+
+---
+
+<div align="center">
+
+**Part of [LaunchKit](../../README.md) by [Replyke](https://replyke.com)**
+
+</div>
